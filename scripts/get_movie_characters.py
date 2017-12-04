@@ -1,5 +1,4 @@
 from bs4 import BeautifulSoup
-from html_table_extractor.extractor import Extractor
 import urllib.request
 import re
 import lxml
