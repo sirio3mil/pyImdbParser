@@ -9,7 +9,7 @@ tables = soup.find_all('table', {'class': 'cast_list'})
 
 cleanr = re.compile('<.*?>')
 
-for row in table.find_all('tr'):
+for row in tables[0].find_all('tr'):
     td_tags = row.find_all('td')
     if len(td_tags) == 4:
         a = td_tags[1].find_all('a')[0]
