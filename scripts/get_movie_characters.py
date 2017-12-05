@@ -31,8 +31,14 @@ for row in tables[0].find_all('tr'):
                         actor['alternatives'] = []
                     actor['alternatives'].append(extra.replace('as ', ''))
                     actor['extras'].remove(extra)
+                    if len(actor['extras']) == 0:
+                        del actor['extras']
         pos = character.find(' / ')
         if pos > 0:
             actor['characters'] = character.split(' / ')
         else:
             actor['characters'] = [character]
+        if len(actor['characters']) == 0:
+            del actor['characters']
+        else:
+            actor['characters'] = list(map(lambda s: s.strip(), actor['characters']))
